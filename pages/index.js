@@ -1,24 +1,22 @@
 import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
-import Navigation from '@components/Navigation/Navigation'
+import Navigation from 'pages/Navigation/Navigation'
+import Footer from "pages/Footer/Footer";
+import AboutMe from 'pages/about'
+import ContactForm from './contact';
+import Card from '@components/Card';
 
 export default function Home() {
   return (
-    <div className="container">
+    <div id='App' className='flex-col space-between'>
       <Head>
         <title>NK portfolio</title>
         <link rel="icon" href="/NK.svg" />
       </Head>
+
       <Navigation />
-
-      <main>
-        <Header title="Welcome to my app!" />
-        <p className="description">
-          My profile
-        </p>
-      </main>
-
+      <Card />
+      {/* <AboutMe />
+      <ContactForm /> */}
       <Footer />
     </div>
   )
