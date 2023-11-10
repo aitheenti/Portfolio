@@ -4,13 +4,15 @@
 
 html,
 body,
+#App,
 #__next {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+  height: 100vh;
   padding: 0;
   margin: 0;
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell,
+  font-family: Poppins, Oxygen, Ubuntu, Cantarell,
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  display: flex;
+  flex-flow: column;
 }
 
 * {

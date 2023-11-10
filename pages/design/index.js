@@ -1,6 +1,17 @@
+import Card from "@components/Card"
+import Footer from "pages/Footer/Footer"
+import Navigation from "pages/Navigation/Navigation"
+
 function Design() {
     return (
-        <h1> Design page</h1>
+        <>
+            <Navigation />
+            <h1> Projects</h1>
+            <Card />
+            <Footer />
+        </>
+
+
     )
 }
 export default Design
