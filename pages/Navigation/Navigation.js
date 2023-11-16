@@ -1,4 +1,7 @@
 import Link from 'next/link'
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import { useState } from 'react';
 
 export default function Navigation() {
     const menuLinks = [
@@ -8,17 +11,26 @@ export default function Navigation() {
         { page: 'Resume', route: '/resume' },
         { page: 'Contact', route: '/contact' },
     ]
+    const [iconToggle, setIconToggle] = useState(false);
+
+    function toggleMenu() {
+        setIconToggle(!iconToggle)
+    }
 
     return (
         <header className="bg-gray-800 text-white">
             <div className="container mx-auto text-center">
-                <div class="py-4 flex items-center p-10">
+                <div class="py-4 flex justify-between p-5">
                     <div class="w-1/12">
                         <a href='/' > <img src="/NK.svg" /></a>
                     </div>
-                    <div class="w-11/12 flex justify-evenly">
-                        {menuLinks?.map(link => <Link className="text-xl font-bold"
-                            href={link.route}>{link.page}</Link>)}
+                    <div onClick={toggleMenu} class="flex flex-col justify-end items-end duration-200  ">
+                        {iconToggle ? <><CloseIcon /> <div class="w-11/12 flex self-end justify-evenly flex-col w-auto ">
+                            {menuLinks?.map(link => <Link className="self-end text-xl font-bold p-5"
+                                href={link.route}>{link.page}</Link>)}
+                        </div> </> :
+                            <MenuIcon />
+                        }
                     </div>
                 </div>
             </div>

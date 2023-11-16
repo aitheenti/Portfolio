@@ -46,29 +46,41 @@ function ContactForm() {
     return (
         <>
             <div className="flex flex-col justify-center justify-items-center m-0 bg-black text-white items-center">
-                Let's connect!
-                <form onSubmit={formik.handleSubmit}>
-                    <div className="m-20 flex justify-between">
+                <div className='text-2xl font-bold'>Let's connect!
+                </div>
+                <form className='bg-gray-800' onSubmit={formik.handleSubmit}>
+                    <div className="m-16 flex justify-between">
                         <label > First name:</label>
-                        <input id="firstName" name="firstName" value={formik.values.firstName} placeholder='First Name' type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} />
-                        {formik.errors.firstName ? <div>{formik.errors.firstName}</div> : null}
+                        <div>
+                            <input id="firstName" name="firstName" value={formik.values.firstName} placeholder='First Name' type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} />
+                            {formik.errors.firstName ? <div className='text-red-600'>{formik.errors.firstName}</div> : null}
+                        </div>
+
                     </div>
-                    <div className="m-20 flex justify-between">
+                    <div className="m-16 flex justify-between">
                         <label> Last name:</label>
-                        <input id="lastName" name="lastName" value={formik.values.lastName} placeholder='Last Name' type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} />
-                        {formik.errors.lastName ? <div>{formik.errors.lastName}</div> : null}
+                        <div>
+                            <input id="lastName" name="lastName" value={formik.values.lastName} placeholder='Last Name' type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} />
+                            {formik.errors.lastName ? <div className='text-red-600'>{formik.errors.lastName}</div> : null}
+                        </div>
                     </div>
-                    <div className="m-20 flex justify-between">
+                    <div className="m-16 flex justify-between">
                         <label> Email Address:</label>
-                        <input id="email" name="email" value={formik.values.email} placeholder='testexamplegmail.com' type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} />
-                        {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+                        <div>
+                            <input id="email" name="email" value={formik.values.email} placeholder='testexamplegmail.com' type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} />
+                            {formik.errors.email ? <div className='text-red-600'>{formik.errors.email}</div> : null}
+                        </div>
                     </div>
-                    <div className="m-20 flex justify-between">
+                    <div className="m-16 flex justify-between">
                         <label> Message:</label>
-                        <input id="message" name="message" value={formik.values.message} placeholder='Type your message here...' type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} />
-                        {formik.errors.message ? <div>{formik.errors.message}</div> : null}
+                        <div>
+                            <input id="message" name="message" value={formik.values.message} placeholder='Type your message here...' type="text" onChange={formik.handleChange} onBlur={formik.handleBlur} />
+                            {formik.errors.message ? <div className='text-red-600'>{formik.errors.message}</div> : null}
+                        </div>
                     </div>
-                    <button type="submit">Submit Form</button>
+                    <div className='flex bg-blue-500 rounded-xl w-40 m-auto justify-center'>
+                        <button type="submit">Submit Form</button>
+                    </div>
                 </form>
             </div >
         </>
