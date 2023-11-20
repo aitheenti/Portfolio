@@ -48,7 +48,7 @@ function ContactForm() {
             <div className="flex flex-col justify-center justify-items-center m-0 bg-black text-white items-center">
                 <div className='text-2xl font-bold'>Let's connect!
                 </div>
-                <form className='bg-gray-800' onSubmit={formik.handleSubmit}>
+                <form className='bg-gray-400 w-full' onSubmit={formik.handleSubmit}>
                     <div className="m-16 flex justify-between">
                         <label > First name:</label>
                         <div>
@@ -78,7 +78,7 @@ function ContactForm() {
                             {formik.errors.message ? <div className='text-red-600'>{formik.errors.message}</div> : null}
                         </div>
                     </div>
-                    <div className='flex bg-blue-500 rounded-xl w-40 m-auto justify-center'>
+                    <div className='flex bg-blue-500 w-40 m-auto justify-center rounded-3xl'>
                         <button type="submit">Submit Form</button>
                     </div>
                 </form>
